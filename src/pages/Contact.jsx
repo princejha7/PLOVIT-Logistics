@@ -1,6 +1,6 @@
 import { MapPin, Phone, Mail, Globe, Clock, ArrowRight } from "lucide-react";
 
-import companybuilding from "../assets/images/CompanyLogo/contactBuilding.png";
+import companybuilding from "../assets/images/companyLogo/contactBuilding.png";
 
 export default function Contact() {
   return (
