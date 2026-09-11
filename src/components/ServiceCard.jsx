@@ -12,16 +12,13 @@ export default function ServiceCard({
         group relative overflow-hidden
         bg-white
         rounded-xl
-        shadow-sm
+        shadow-lg
         border border-gray-100
         flex flex-col
         cursor-pointer
-
         transition-all duration-300 ease-in-out
         hover:-translate-y-1
         hover:shadow-md
-        hover:border-[#F4A261]
-
         ${isVisible
           ? "translate-y-0 opacity-100"
           : "translate-y-5 opacity-0"
@@ -43,7 +40,7 @@ export default function ServiceCard({
           top-0
           bottom-0
           w-0
-          bg-brand-blue
+          bg-brand-orange
           z-0
           transition-all
           duration-500
@@ -190,8 +187,6 @@ export default function ServiceCard({
             text-sm
             leading-relaxed
             flex-1
-            mb-5
-
             transition-colors
             duration-300
             ease-in-out
@@ -201,40 +196,6 @@ export default function ServiceCard({
         >
           {service.shortDescription}
         </p>
-
-        {/* View Details */}
-        <button
-          onClick={() => onReadMore(service)}
-          className="
-            inline-flex
-            items-center
-            gap-2
-            justify-center
-
-            text-brand-orange
-            font-semibold
-            text-sm
-
-            transition-all
-            duration-300
-            ease-in-out
-
-            group-hover:text-white
-            hover:gap-3
-          "
-          aria-label={`View details for ${service.title}`}
-        >
-          View Details
-
-          <ArrowRight
-            size={15}
-            className="
-              transition-transform
-              duration-300
-              group-hover:translate-x-1
-            "
-          />
-        </button>
       </div>
     </article>
   );

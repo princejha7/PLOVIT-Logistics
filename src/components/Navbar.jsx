@@ -1,6 +1,8 @@
 ﻿import { useState, useEffect } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { Menu, X, ArrowRight } from "lucide-react";
+import logo from "../assets/images/companyLogo/logo.png";
+import linkedin from "../assets/images/socialMedia/linkedin.png";
 
 const navLinks = [
   { label: "About Us", to: "/" },
@@ -15,15 +17,19 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleGetQuote = () => {
-    navigate("/getaquote");
+    navigate("/contact");
     setIsOpen(false);
   };
 
@@ -39,56 +45,23 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
 
-            {/* Logo */}
+            {/* =========================
+                LOGO
+            ========================= */}
+
             <Link
               to="/"
               className="flex items-center gap-2.5 flex-shrink-0"
               aria-label="PLOVIT Logistics Home"
             >
-              <svg
-                width="42"
-                height="42"
-                viewBox="0 0 42 42"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 21L21 6L36 13.5V21"
-                  stroke="#0D2B5E"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                />
-
-                <path
-                  d="M6 21L21 36L36 28.5V21"
-                  stroke="#E84A0C"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                />
-
-                <path
-                  d="M13 18L21 10L29 18"
-                  stroke="#0D2B5E"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-
-                <path
-                  d="M13 24L21 32L29 24"
-                  stroke="#E84A0C"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-              </svg>
+              <img
+                src={logo}
+                alt="PLOVIT Logistics"
+                className="h-20 w-20 mt-2 object-contain"
+              />
 
               <div className="leading-none">
-                <div className="text-brand-blue font-black text-xl tracking-[0.15em]">
+                <div className="text-brand-orange font-black text-xl tracking-[0.15em]">
                   PLOVIT
                 </div>
 
@@ -98,8 +71,12 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-8">
+            {/* =========================
+                DESKTOP NAV
+            ========================= */}
+
+            <div className="hidden md:flex items-center gap-7">
+
               {navLinks.map((link) => (
                 <NavLink
                   key={link.to}
@@ -116,9 +93,27 @@ export default function Navbar() {
                   {link.label}
                 </NavLink>
               ))}
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/company/plovit-logistics-private-limited"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="PLOVIT Logistics LinkedIn"
+                className="group flex items-center justify-center"
+              >
+                <img
+                  src={linkedin}
+                  alt="LinkedIn"
+                  className="w-8 h-8 object-contain transition-transform rounded-lg duration-300 group-hover:scale-110"
+                />
+              </a>
             </div>
 
-            {/* CTA */}
+            {/* =========================
+                GET A QUOTE
+            ========================= */}
+
             <div className="hidden md:block">
               <button
                 onClick={handleGetQuote}
@@ -140,7 +135,10 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Mobile Toggle */}
+            {/* =========================
+                MOBILE MENU BUTTON
+            ========================= */}
+
             <button
               className="md:hidden p-2 text-brand-blue"
               onClick={() => setIsOpen(!isOpen)}
@@ -155,7 +153,10 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu */}
+          {/* =========================
+              MOBILE MENU
+          ========================= */}
+
           {isOpen && (
             <div className="md:hidden border-t border-gray-100 py-3 animate-fade-in">
               <div className="flex flex-col">
@@ -178,6 +179,24 @@ export default function Navbar() {
                   </NavLink>
                 ))}
 
+                {/* Mobile LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/company/plovit-logistics-private-limited"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="px-4 py-3 flex items-center gap-3 text-sm font-semibold text-brand-blue hover:text-brand-orange"
+                >
+                  <img
+                    src={linkedin}
+                    alt="LinkedIn"
+                    className="w-6 h-6 object-contain"
+                  />
+
+                  <span>LinkedIn</span>
+                </a>
+
+                {/* Mobile CTA */}
                 <div className="px-4 pt-3 pb-1">
                   <button
                     onClick={handleGetQuote}
@@ -197,14 +216,16 @@ export default function Navbar() {
                     </span>
                   </button>
                 </div>
-
               </div>
             </div>
           )}
         </nav>
       </header>
 
-      {/* CTA Button Styles */}
+      {/* =========================
+          CTA BUTTON STYLES
+      ========================= */}
+
       <style>{`
         .quote-button {
           appearance: none;
@@ -271,18 +292,6 @@ export default function Navbar() {
           color: #ffffff;
           background-color: #0D2B5E;
           overflow: hidden;
-          box-shadow: inset 0 0 0 1px transparent;
-        }
-
-        .quote-button-lg::before {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 2px;
-          height: 2px;
-          background-color: #0D2B5E;
         }
 
         .quote-button-lg::after {
@@ -297,7 +306,6 @@ export default function Navbar() {
           transition: all 0.2s ease;
         }
 
-        /* Orange sliding layer */
         .quote-button-sl {
           display: block;
           position: absolute;
@@ -322,7 +330,6 @@ export default function Navbar() {
           transition: all 0.3s ease;
         }
 
-        /* Hover */
         .quote-button:hover {
           color: #0D2B5E;
         }
@@ -339,12 +346,10 @@ export default function Navbar() {
           transform: translateX(3px);
         }
 
-        /* Active */
         .quote-button:active .quote-button-lg {
           transform: scale(0.98);
         }
 
-        /* Mobile */
         @media (max-width: 767px) {
           .quote-button {
             width: 100%;

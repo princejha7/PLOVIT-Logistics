@@ -2,7 +2,7 @@
 
 export default function Clients() {
   return (
-    <section className="py-14 bg-white border-t border-gray-100" aria-label="Our Global Clients">
+    <section className="py-7 md:py-11 bg-white border-t border-gray-100" aria-label="Our Global Clients">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <h2 className="section-title">Trusted by Global Clients</h2>

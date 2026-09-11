@@ -8,9 +8,9 @@ export default {
     extend: {
       colors: {
         brand: {
-          orange: '#E84A0C',
+          orange: '#ef4123',
           'orange-hover': '#C93D08',
-          blue: '#0D2B5E',
+          blue: '#213368',
           'blue-mid': '#1A3A7A',
           gray: '#F8F8F8',
         },

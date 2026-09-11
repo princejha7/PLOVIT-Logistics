@@ -43,7 +43,7 @@ const slides = [
 const features = [
   { icon: Globe, label: "Global Network" },
   { icon: Package, label: "End-to-End Solutions" },
-  { icon: Shield, label: "Secure & Compliant" },
+  // { icon: Shield, label: "Secure & Compliant" },
   { icon: Users, label: "Expert Support" },
 ];
 
@@ -209,7 +209,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative pt-16 md:pt-20"
+      className="relative pt-16 pb-5 md:pt-20"
       aria-label="Hero Section"
     >
       {/* Main Hero */}
@@ -287,7 +287,7 @@ export default function Hero() {
               </button>
 
               <button
-                onClick={() => navigate("/getaquote")}
+                onClick={() => navigate("/contact")}
                 className="btn-outline hover:bg-brand-orange rounded-sm hover:text-white transition-colors duration-200"
                 aria-label="Get a Quote"
               >
@@ -358,7 +358,7 @@ export default function Hero() {
             {/* Let's Connect Float */}
             <button
               onClick={scrollToConnect}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-blue text-white flex flex-col items-center gap-1.5 px-2.5 py-4 text-[10px] font-bold tracking-wide hover:bg-brand-blue-mid transition-colors duration-200 rounded-l-lg shadow-lg"
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-blue text-white flex flex-col items-center gap-1.5 px-2.5 py-4 text-[10px] hover:bg-brand-orange font-bold tracking-wide hover:bg-brand-blue-mid transition-colors duration-200 rounded-l-lg shadow-lg"
               aria-label="Let us Connect"
             >
               <Headphones size={16} />

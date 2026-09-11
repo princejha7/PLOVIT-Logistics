@@ -1,45 +1,44 @@
 ﻿import { useEffect, useRef, useState } from "react";
 import {
-  Target,
-  Globe2,
-  PackageCheck,
-  Clock,
-  Headphones,
+  BriefcaseBusiness,
+  ShieldCheck,
+  Handshake,
+  Network,
+  BadgeDollarSign,
 } from "lucide-react";
 
 const reasons = [
   {
-    icon: Target,
-    title: "Industry Expertise",
+    icon: BriefcaseBusiness,
+    title: "Experienced Leadership",
     description:
-      "Years of experience in delivering reliable logistics solutions across industries.",
+      "Experienced leadership delivering reliable logistics solutions with strong industry knowledge.",
   },
   {
-    icon: Globe2,
-    title: "Global Reach",
+    icon: ShieldCheck,
+    title: "Regulatory Compliance",
     description:
-      "Strong global network ensuring seamless international operations.",
+      "Strong compliance practices ensuring smooth operations while meeting all regulatory requirements.",
   },
   {
-    icon: PackageCheck,
-    title: "Customized Solutions",
+    icon: Handshake,
+    title: "Client-Centric Approach",
     description:
-      "Tailored logistics solutions designed to meet your unique business needs.",
+      "We understand your needs and provide personalized logistics solutions focused on your success.",
   },
   {
-    icon: Clock,
-    title: "Timely Delivery",
+    icon: Network,
+    title: "Nationwide Network",
     description:
-      "We value time and ensure your cargo reaches on time, every time.",
+      "A strong nationwide network ensuring seamless logistics operations across major locations.",
   },
   {
-    icon: Headphones,
-    title: "Dedicated Support",
+    icon: BadgeDollarSign,
+    title: "Cost-Effective Solutions",
     description:
-      "Our expert team is available 24/7 to support your logistics requirements.",
+      "Efficient logistics solutions designed to reduce costs while maintaining reliable service quality.",
   },
 ];
-
 export default function WhyChooseUs() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -69,7 +68,7 @@ export default function WhyChooseUs() {
   return (
     <section
       ref={sectionRef}
-      className={`py-16 md:py-24 bg-brand-gray transition-all duration-700 ease-out delay-150 ${
+      className={`py-7 md:py-11 bg-brand-gray transition-all duration-700 ease-out delay-150 ${
         isVisible
           ? "translate-y-0 scale-100 opacity-100"
           : "translate-y-4 scale-[0.96] opacity-0"

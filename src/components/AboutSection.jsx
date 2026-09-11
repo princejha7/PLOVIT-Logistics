@@ -2,11 +2,50 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
+// Images
+import contactBuilding from "../assets/images/companyLogo/contactBuilding.png";
+import companyBuilding from "../assets/images/companyLogo/companyBuilding.png";
+import companyRes from "../assets/images/companyLogo/companyRes.png";
+
+const slides = [
+  {
+    id: 1,
+    image: contactBuilding,
+    heading: "PLOVIT Logistics",
+  },
+  {
+    id: 2,
+    image: companyRes,
+    heading: "PLOVIT Logistics",
+  },
+  {
+    id: 3,
+    image: companyBuilding,
+    heading: "PLOVIT Logistics",
+  },
+];
+
 export default function AboutSection() {
   const navigate = useNavigate();
   const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
 
+  const [isVisible, setIsVisible] = useState(false);
+  const [current, setCurrent] = useState(0);
+
+  // Scroll to Contact section
+  const scrollToConnect = () => {
+    const el = document.getElementById("lets-connect");
+
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+      });
+    } else {
+      navigate("/contact");
+    }
+  };
+
+  // Intersection animation
   useEffect(() => {
     const section = sectionRef.current;
 
@@ -19,7 +58,9 @@ export default function AboutSection() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.2,
+      }
     );
 
     observer.observe(section);
@@ -27,18 +68,26 @@ export default function AboutSection() {
     return () => observer.disconnect();
   }, []);
 
+  // Auto slider
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       ref={sectionRef}
       id="about"
-      className="py-16 md:py-24 bg-white"
+      className="py-7 md:py-11 bg-brand-gray"
       aria-label="About PLOVIT Logistics"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* LEFT */}
+          {/* ================= LEFT ================= */}
           <div>
 
             {/* Label */}
@@ -69,12 +118,7 @@ export default function AboutSection() {
                   : "translate-y-4 opacity-0"
               }`}
             >
-              Delivering Excellence
-              <br />
-              Across{" "}
-              <span className="text-brand-orange">
-                Every Mile
-              </span>
+              <strong>Plovit Logistics Private Limited</strong>
             </h2>
 
             {/* Description */}
@@ -85,16 +129,20 @@ export default function AboutSection() {
                   : "translate-y-4 opacity-0"
               }`}
             >
-              PLOVIT Logistics is a global logistics company providing
-              innovative and reliable solutions to connect your business to the
-              world. With a strong network, advanced technology and a commitment
-              to excellence, we ensure your cargo reaches its destination
-              safely, on time and every time.
+              is a leading freight
+        forwarding & logistics company based in <span className="text-brand-orange font-bold">Noida</span>, founded by industry
+        experts. We have rapidly expanded our presence across India, now
+        operating from over <span className="text-brand-orange font-bold">29 locations</span>, including branches in <span className="text-brand-orange font-bold">Mumbai, Mundra, and Chennai</span> <br /> Our journey in the logistics industry began in <span className="text-brand-orange font-bold">2020</span>, well before our
+        official <span className="text-brand-orange font-bold">registration in 2025</span>. This early start allowed us to build
+        valuable expertise, establish strong industry relationships, and
+        develop a deep understanding of our <span className="text-brand-orange font-bold">clients’</span> needs. <br/> We <span className="text-brand-orange font-bold">offer</span> a comprehensive range of <span className="text-brand-orange font-bold">logistics solutions</span>, including <span className="text-brand-orange font-bold"> international logistics</span> , customs brokerage, warehousing, cross-border
+        trade, and project cargo movement along with <span className="text-brand-orange font-bold">supply chain consultancy</span>.
             </p>
 
-            {/* GET IN TOUCH BUTTON */}
+            {/* ================= GET IN TOUCH BUTTON ================= */}
             <button
-              onClick={() => navigate("/getaquote")}
+              type="button"
+              onClick={scrollToConnect}
               className={`group relative appearance-none border-0 bg-transparent cursor-pointer p-2 uppercase font-bold text-[13px] text-brand-blue transition-all duration-500 ease-out delay-[450ms] ${
                 isVisible
                   ? "translate-y-0 opacity-100"
@@ -190,43 +238,93 @@ export default function AboutSection() {
                     group-hover:translate-x-[3px]
                   "
                 />
-
               </span>
             </button>
           </div>
 
-          {/* RIGHT */}
+          {/* ================= RIGHT / IMAGE SLIDER ================= */}
           <div
-            className={`relative transition-all duration-700 ease-out delay-150 ${
-              isVisible
-                ? "translate-y-0 scale-100 opacity-100"
-                : "translate-y-4 scale-[0.96] opacity-0"
-            }`}
+            className="
+              relative
+              h-72
+              sm:h-80
+              md:h-96
+              lg:h-[520px]
+              rounded-2xl
+              overflow-hidden
+              shadow-2xl
+            "
           >
-            <div className="rounded-2xl overflow-hidden shadow-xl">
 
+            {/* Slides */}
+            {slides.map((slide, index) => (
               <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80"
-                alt="PLOVIT Logistics container terminal at sunset"
-                className="w-full h-80 md:h-[420px] object-cover"
-                loading="lazy"
+                key={slide.id}
+                src={slide.image}
+                alt={slide.heading}
+                className={`
+                  absolute
+                  inset-0
+                  w-full
+                  h-full
+                  object-cover
+                  transition-opacity
+                  duration-700
+                  ${
+                    index === current
+                      ? "opacity-100"
+                      : "opacity-0"
+                  }
+                `}
               />
+            ))}
 
+            {/* Overlay */}
+            <div
+              className="
+                absolute
+                inset-0
+                bg-gradient-to-t
+                from-brand-blue/20
+                to-transparent
+              "
+            />
+
+            {/* Slide Dots */}
+            <div
+              className="
+                absolute
+                bottom-4
+                left-1/2
+                -translate-x-1/2
+                flex
+                gap-2
+                z-10
+              "
+            >
+              {slides.map((slide, index) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  onClick={() => setCurrent(index)}
+                  className={`
+                    rounded-full
+                    transition-all
+                    duration-300
+                    ${
+                      index === current
+                        ? "w-6 h-2 bg-brand-orange"
+                        : "w-2 h-2 bg-white/60 hover:bg-white"
+                    }
+                  `}
+                  aria-label={`Go to slide ${index + 1}`}
+                  aria-current={
+                    index === current ? "true" : undefined
+                  }
+                />
+              ))}
             </div>
-
-            {/* Orange Decoration */}
-            <div
-              className="absolute -bottom-4 -right-4 w-20 h-20 bg-brand-orange/10 rounded-2xl -z-10"
-              aria-hidden="true"
-            />
-
-            {/* Blue Decoration */}
-            <div
-              className="absolute -top-4 -left-4 w-14 h-14 bg-brand-blue/10 rounded-2xl -z-10"
-              aria-hidden="true"
-            />
           </div>
-
         </div>
       </div>
     </section>

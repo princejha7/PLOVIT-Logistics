@@ -1,12 +1,9 @@
 ﻿import { Link } from "react-router-dom";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  ExternalLink,
-  ArrowRight,
-} from "lucide-react";
+import { MapPin, Phone, Mail, ExternalLink, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import footerLogo from "../assets/images/companyLogo/FooterCompany.png";
+import linkedin from "../assets/images/SocialMedia/linkedin.png";
+import x from "../assets/images/SocialMedia/xlogo.png";
 
 const navLinks = [
   { label: "About Us", to: "/" },
@@ -21,7 +18,7 @@ const serviceLinks = [
   "Customs Clearance",
   "Domestic Transportation",
   "ODC & Project Cargo",
-  "Warehousing",
+  "Supply Chain Solutions",
   "Consultancy Services",
 ];
 
@@ -43,7 +40,7 @@ export default function Footer() {
       },
       {
         threshold: 0.15,
-      }
+      },
     );
 
     observer.observe(footer);
@@ -55,48 +52,23 @@ export default function Footer() {
     <footer
       ref={footerRef}
       className={`relative bg-brand-blue text-white transition-all duration-700 ease-out delay-150 ${
-              isVisible
-                ? "translate-y-0 scale-100 opacity-100"
-                : "translate-y-4 scale-[0.96] opacity-0"
-            }`}
+        isVisible
+          ? "translate-y-0 scale-100 opacity-100"
+          : "translate-y-4 scale-[0.96] opacity-0"
+      }`}
       aria-label="PLOVIT Logistics Footer"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 pb-6">
-
         {/* Main Footer */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link
-              to="/"
-              className="flex items-center gap-2 mb-5"
-            >
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 42 42"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 21L21 6L36 13.5V21"
-                  stroke="white"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                />
-
-                <path
-                  d="M6 21L21 36L36 28.5V21"
-                  stroke="#E84A0C"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                />
-              </svg>
+            <Link to="/" className="flex items-center gap-2 mb-5">
+              <img
+                src={footerLogo}
+                alt="Company Logo"
+                className="h-20 w-20 mt-2"
+              />
 
               <div className="leading-none">
                 <div className="text-white font-black text-lg tracking-[0.15em]">
@@ -115,7 +87,7 @@ export default function Footer() {
             </p>
 
             <a
-              href="[LINKEDIN URL]"
+              href="https://www.linkedin.com/company/plovit-logistics-private-limited"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-white/60 hover:text-brand-orange transition-colors duration-200 text-sm"
@@ -148,7 +120,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          {/* <div>
             <h3 className="text-white font-bold text-xs uppercase tracking-widest mb-5">
               Our Services
             </h3>
@@ -166,7 +138,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Contact */}
           <div>
@@ -175,6 +147,17 @@ export default function Footer() {
             </h3>
 
             <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-white/60 text-sm">
+                <MapPin
+                  size={15}
+                  className="mt-0.5 text-brand-orange flex-shrink-0"
+                />
+
+                <span>
+                  Corporate Address: 942, 9th Floor, Astralis Supernova, Sector
+                  94, Noida, Uttar Pradesh 201301, India
+                </span>
+              </li>
 
               <li className="flex items-start gap-3 text-white/60 text-sm">
                 <MapPin
@@ -182,43 +165,76 @@ export default function Footer() {
                   className="mt-0.5 text-brand-orange flex-shrink-0"
                 />
 
-                <span>[COMPANY ADDRESS]</span>
+                <span>
+                  Registered Address: C-84, Ground Floor, Nai Basti, Jamia
+                  Nagar, South Delhi, Delhi 110025, India
+                </span>
               </li>
 
               <li className="flex items-center gap-3 text-white/60 text-sm">
-                <Phone
-                  size={15}
-                  className="text-brand-orange flex-shrink-0"
-                />
+                <Phone size={15} className="text-brand-orange flex-shrink-0" />
 
-                <span>[PHONE NUMBER]</span>
+                <span>+91 120 489 7315</span>
               </li>
 
               <li className="flex items-center gap-3 text-white/60 text-sm">
-                <Mail
-                  size={15}
-                  className="text-brand-orange flex-shrink-0"
-                />
+                <Mail size={15} className="text-brand-orange flex-shrink-0" />
 
-                <span>[EMAIL ADDRESS]</span>
+                <span>info@plovitlogistics.com</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Media */}
+
+          <div>
+            <h3 className="text-white font-bold text-xs uppercase tracking-widest mb-5">
+              Social Media
+            </h3>
+
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-white/60 text-sm">
+                <a
+                  href="https://www.linkedin.com/company/plovit-logistics-private-limited"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-white/60 hover:text-brand-orange transition-colors duration-200 text-sm"
+                  aria-label="PLOVIT Logistics on LinkedIn"
+                >
+                  <img
+                    src={linkedin}
+                    alt="LinkedIn"
+                    className="w-6 h-6 rounded-full object-contain"
+                  />
+                  LinkedIn
+                </a>
               </li>
 
+              <li className="flex items-start gap-3 text-white/60 text-sm">
+                <a
+                  href="https://x.com/PlovitLogistics"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-white/60 hover:text-brand-orange transition-colors duration-200 text-sm"
+                  aria-label="PLOVIT Logistics on Twitter"
+                >
+                  <img
+                    src={x}
+                    alt="X"
+                    className="w-6 h-6 rounded-full object-contain"
+                  />
+                  X
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
-
-          <p className="text-white/40 text-sm">
-            &copy; {new Date().getFullYear()} PLOVIT Logistics. All rights
-            reserved.
+          <p className="text-white/40 text-sm mx-auto">
+            &copy; {new Date().getFullYear()} Plovit Logistics
           </p>
-
-          <p className="text-white/40 text-sm">
-            Delivering Excellence Across Every Mile
-          </p>
-
         </div>
       </div>
     </footer>

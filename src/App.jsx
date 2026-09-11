@@ -5,7 +5,7 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Career from './pages/Career'
-import GetAQuote from './pages/Getaquote'
+import GetAQuote from './pages/GetAQuote'
 
 export default function App() {
   return (
