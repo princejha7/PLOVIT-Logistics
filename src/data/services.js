@@ -1,4 +1,12 @@
-﻿export const services = [
+﻿import airFreightIcon from "../assets/images/servicesIcon/air-freight-icon.png";
+import oceanFreightIcon from "../assets/images/servicesIcon/ocean-freight-icon.png";
+import customsClearanceIcon from "../assets/images/servicesIcon/customs-clearance-icon.png";
+import domesticTransportationIcon from "../assets/images/servicesIcon/domestic-transportation-icon.png";
+import odcProjectCargoIcon from "../assets/images/servicesIcon/odc-project-cargo-icon.png";
+import supplyChainSolutionsIcon from "../assets/images/servicesIcon/supply-chain-solutions-icon.png";
+import consultancyServicesIcon from "../assets/images/servicesIcon/consultancy-services-icon.png";
+
+export const services = [
   {
     id: 1,
     title: "Air Freight",
@@ -18,7 +26,7 @@
       Efficient documentation and seamless customs clearance ensure smooth, hassle-free shipments from origin to destination.
     `,
 
-    icon: "src/assets/images/servicesIcon/air-freight-icon.png",
+    icon: airFreightIcon,
 
     image:
       "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
@@ -43,7 +51,7 @@
       Quick, accurate paperwork and compliance with international shipping regulations for smooth customs clearance.
     `,
 
-    icon: "src/assets/images/servicesIcon/ocean-freight-icon.png",
+    icon: oceanFreightIcon,
 
     image:
       "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80",
@@ -67,7 +75,7 @@
       We expertly manage the entire export clearance process, from preparing export documentation and securing necessary permits to liaising with customs authorities.
     `,
 
-    icon: "src/assets/images/servicesIcon/customs-clearance-icon.png",
+    icon: customsClearanceIcon,
 
     image:
       "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
@@ -92,7 +100,7 @@
     `,
 
     icon:
-      "src/assets/images/servicesIcon/domestic-transportation-icon.png",
+      domesticTransportationIcon,
 
     image:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
@@ -112,7 +120,7 @@
       From complex project movements to demanding heavy-haul requirements, we deliver dependable transportation solutions tailored to the specific needs of every shipment.
     `,
 
-    icon: "src/assets/images/servicesIcon/odc-project-cargo-icon.png",
+    icon: odcProjectCargoIcon,
 
     image:
       "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
@@ -141,7 +149,7 @@
     `,
 
     icon:
-      "src/assets/images/servicesIcon/supply-chain-solutions-icon.png",
+      supplyChainSolutionsIcon,
 
     image:
       "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80",
@@ -166,7 +174,7 @@
     `,
 
     icon:
-      "src/assets/images/servicesIcon/consultancy-services-icon.png",
+      consultancyServicesIcon,
 
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
