@@ -2,8 +2,8 @@
 import { MapPin, Phone, Mail, ExternalLink, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import footerLogo from "../assets/images/companyLogo/FooterCompany.png";
-import linkedin from "../assets/images/SocialMedia/linkedin.png";
-import x from "../assets/images/SocialMedia/xlogo.png";
+import linkedin from "../assets/images/socialMedia/linkedin.png";
+import x from "../assets/images/socialMedia/xlogo.png";
 
 const navLinks = [
   { label: "About Us", to: "/" },
