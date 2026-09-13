@@ -170,7 +170,7 @@ export default function Services() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           {/* SECTION HEADING */}
-          <div className="mb-12">
+          <div className="mb-12 mt-9">
             <p className="text-sm font-bold tracking-[0.18em] text-brand-orange">
               OUR EXPERTISE
             </p>

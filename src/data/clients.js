@@ -1,8 +1,38 @@
-﻿export const clients = [
-  { id: 1, name: "Maersk", logo: "https://upload.wikimedia.org/wikipedia/en/d/db/Euler_Motors.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original", placeholder: "MAERSK" },
-  { id: 2, name: "Hapag-Lloyd", logo: "https://ornatesolar.com/wp-content/uploads/2024/11/Asset-1@2x-8.png", placeholder: "Hapag-Lloyd" },
-  { id: 3, name: "CMA CGM", logo: "https://ornatesolar.com/wp-content/uploads/2021/02/Inverted-Logo.png", placeholder: "CMA CGM" },
-  { id: 4, name: "ONE", logo: "https://upload.wikimedia.org/wikipedia/commons/c/c9/OkinawaLogo.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original", placeholder: "ONE" },
-  { id: 5, name: "APL", logo: "https://avaanacapital.com/cdn/shop/files/Eggoz.png?v=1757062503", placeholder: "APL" },
-  // { id: 6, name: "NYK Line", logo: null, placeholder: "NYK LINE" },
-]
+﻿import euler from "../assets/images/clients/euler.png";
+import ornatesolar from "../assets/images/clients/ornateSolar.png";
+import inverted from "../assets/images/clients/inverted.png";
+import okinawa from "../assets/images/clients/okinawa.png";
+import eggoz from "../assets/images/clients/eggoz.png";
+
+export const clients = [
+  {
+    id: 1,
+    name: "Euler",
+    logo: euler,
+    placeholder: "Euler",
+  },
+  {
+    id: 2,
+    name: "Ornate Solar",
+    logo: ornatesolar,
+    placeholder: "Ornate Solar",
+  },
+  {
+    id: 3,
+    name: "inverted",
+    logo: inverted,
+    placeholder: "inverted",
+  },
+  {
+    id: 4,
+    name: "okinawa",
+    logo: okinawa,
+    placeholder: "okinawa",
+  },
+  {
+    id: 5,
+    name: "eggoz",
+    logo: eggoz,
+    placeholder: "eggoz",
+  },
+];

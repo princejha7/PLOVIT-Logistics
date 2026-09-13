@@ -1,4 +1,4 @@
-﻿import { certifications, memberships } from "../data/certifications"
+﻿import { certifications} from "../data/certifications"
 
 export default function Certifications() {
   return (

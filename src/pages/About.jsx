@@ -9,7 +9,7 @@ import CTASection from "../components/CTASection";
 
 export default function About() {
   useEffect(() => {
-    document.title = "PLOVIT Logistics | Global Logistics Solutions";
+    document.title = "PLOVIT Logistics";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");
