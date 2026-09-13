@@ -20,7 +20,7 @@ const navLinks = [
   { label: "Career", to: "/career" },
 ];
 
-export default function FooterTemp() {
+export default function Footer() {
   const footerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
