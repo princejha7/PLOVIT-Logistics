@@ -2,8 +2,9 @@
 import { MapPin, Phone, Mail, ExternalLink, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import footerLogo from "../assets/images/companyLogo/FooterCompany.png";
-import linkedin from "../assets/images/socialMedia/linkedin.png";
+import linkedin from "../assets/images/socialMedia/footlinkedin.png";
 import x from "../assets/images/socialMedia/xlogo.png";
+import telephone from "../assets/images/socialMedia/foottelephone.png";
 
 const navLinks = [
   { label: "About Us", to: "/" },
@@ -119,27 +120,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          {/* <div>
-            <h3 className="text-white font-bold text-xs uppercase tracking-widest mb-5">
-              Our Services
-            </h3>
-
-            <ul className="space-y-2.5">
-              {serviceLinks.map((s) => (
-                <li key={s}>
-                  <Link
-                    to="/services"
-                    className="text-white/60 hover:text-brand-orange text-sm transition-colors duration-200 flex items-center gap-1.5"
-                  >
-                    <ArrowRight size={11} />
-                    {s}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
           {/* Contact */}
           <div>
             <h3 className="text-white font-bold text-xs uppercase tracking-widest mb-5">
@@ -172,15 +152,34 @@ export default function Footer() {
               </li>
 
               <li className="flex items-center gap-3 text-white/60 text-sm">
-                <Phone size={15} className="text-brand-orange flex-shrink-0" />
+                 <Phone
+                  size={15}
+                  className="mt-0.5 text-brand-orange flex-shrink-0"
+                />
+                 <a
+                href="tel:+919315111174"
+                className="text-sm leading-6 transition-colors hover:text-brand-orange"
+              >
+                +91 931 511 1174
+              </a>
+              </li>
 
-                <span>+91 120 489 7315</span>
+              <li className="flex items-center gap-3 text-white/60 text-sm">
+               <img
+                  src={telephone}
+                  alt="Telephone"
+                  className="w-4 h-4 object-cover"
+                />
+
+              <a href="tel:+911204897315" className="hover:text-brand-orange">
+               +91 120 489 7315
+                </a>
               </li>
 
               <li className="flex items-center gap-3 text-white/60 text-sm">
                 <Mail size={15} className="text-brand-orange flex-shrink-0" />
 
-                <span>info@plovitlogistics.com</span>
+                <a href="mailto:info@plovitlogistics.com" className="hover:text-brand-orange">info@plovitlogistics.com</a>
               </li>
             </ul>
           </div>
@@ -204,7 +203,7 @@ export default function Footer() {
                   <img
                     src={linkedin}
                     alt="LinkedIn"
-                    className="w-6 h-6 rounded-full object-contain"
+                    className="w-5 h-5 object-cover"
                   />
                   LinkedIn
                 </a>
@@ -221,7 +220,7 @@ export default function Footer() {
                   <img
                     src={x}
                     alt="X"
-                    className="w-6 h-6 rounded-full object-contain"
+                    className="w-4 h-4 object-cover"
                   />
                   X
                 </a>
@@ -233,7 +232,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="border-t border-white/10 mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-white/40 text-sm mx-auto">
-            &copy; {new Date().getFullYear()} Plovit Logistics
+            &copy; {new Date().getFullYear()} Plovit Logistics Private Limited
           </p>
         </div>
       </div>

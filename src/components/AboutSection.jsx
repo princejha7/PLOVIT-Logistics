@@ -129,14 +129,9 @@ export default function AboutSection() {
                   : "translate-y-4 opacity-0"
               }`}
             >
-              is a leading freight
-        forwarding & logistics company based in <span className="text-brand-orange font-bold">Noida</span>, founded by industry
-        experts. We have rapidly expanded our presence across India, now
-        operating from over <span className="text-brand-orange font-bold">29 locations</span>, including branches in <span className="text-brand-orange font-bold">Mumbai, Mundra, and Chennai</span> <br /> Our journey in the logistics industry began in <span className="text-brand-orange font-bold">2020</span>, well before our
-        official <span className="text-brand-orange font-bold">registration in 2025</span>. This early start allowed us to build
-        valuable expertise, establish strong industry relationships, and
-        develop a deep understanding of our <span className="text-brand-orange font-bold">clients’</span> needs. <br/> We <span className="text-brand-orange font-bold">offer</span> a comprehensive range of <span className="text-brand-orange font-bold">logistics solutions</span>, including <span className="text-brand-orange font-bold"> international logistics</span> , customs brokerage, warehousing, cross-border
-        trade, and project cargo movement along with <span className="text-brand-orange font-bold">supply chain consultancy</span>.
+              is a leading freight forwarding & logistics company based in Noida, founded by industry experts. We have rapidly expanded our presence across India, now operating from over 29 locations, including branches in Mumbai, Mundra, and Chennai. <br />
+Our journey in the logistics industry began in 2020, well before our official registration in 2025 This early start allowed us to build valuable expertise, establish strong industry relationships, and develop a deep understanding of our clients’ needs. <br />
+We offer a comprehensive range of logistics solutions, including international logistics, customs brokerage, warehousing, cross-border trade, and project cargo movement along with supply chain consultancy.
             </p>
 
             {/* ================= GET IN TOUCH BUTTON ================= */}
@@ -224,7 +219,7 @@ export default function AboutSection() {
 
                 {/* Button Text */}
                 <span className="relative z-10">
-                  GET IN TOUCH
+                  Let's Connect
                 </span>
 
                 {/* Arrow */}
