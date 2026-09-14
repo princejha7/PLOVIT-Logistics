@@ -6,8 +6,8 @@ import linkedin from "../assets/images/socialMedia/linkedin.png";
 
 const navLinks = [
   { label: "About Us", to: "/" },
-  { label: "Our Services", to: "/services" },
-  { label: "Contact Us", to: "/contact" },
+  { label: "Our Services", to: "/our-services" },
+  { label: "Contact Us", to: "/contact-us" },
   { label: "Career", to: "/career" },
 ];
 
@@ -29,7 +29,7 @@ export default function Navbar() {
   }, []);
 
   const handleGetQuote = () => {
-    navigate("/contact");
+    navigate("/contact-us");
     setIsOpen(false);
   };
 

@@ -41,7 +41,7 @@ export default function AboutSection() {
         behavior: "smooth",
       });
     } else {
-      navigate("/contact");
+      navigate("/contact-us");
     }
   };
 

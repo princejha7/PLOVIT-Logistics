@@ -194,7 +194,7 @@ export default function Hero() {
         behavior: "smooth",
       });
     } else {
-      navigate("/contact");
+      navigate("/contact-us");
     }
   };
 
