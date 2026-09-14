@@ -184,9 +184,9 @@ export default function Contact() {
 
                 {/* HEADING */}
                 <h1 className="text-3xl font-bold leading-[1.15] text-brand-blue sm:text-4xl md:text-5xl lg:text-6xl">
-                  Let’s Connect.
+                  Let’s Connect !
                   <br />
-                  We’re Here to Help.
+                  We’re here to help.
                 </h1>
 
                 {/* DIVIDER */}
@@ -304,10 +304,8 @@ export default function Contact() {
               </h3>
 
                <p className="mx-auto max-w-[330px] text-sm leading-6 text-gray-500 transition-colors duration-300 group-hover:text-white">
-    942, 9th Floor, Astralis Supernova, Sector 94,
-    <span>
-      Noida, Uttar Pradesh 201301, India
-    </span>
+    942, 9th Floor, Astralis Supernova, Sector 94, Noida, Uttar Pradesh 201301, India
+    
   </p>
             </div>
 

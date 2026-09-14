@@ -405,8 +405,8 @@ export default function Careers() {
               >
                 We’re looking for passionate and talented people who
                 are ready to make a difference in the world of
-                logistics and supply chain. Join our team and grow
-                with us.
+                logistics and supply chain. Join our team and let's grow together.
+                
               </p>
 
               {/* Email */}
