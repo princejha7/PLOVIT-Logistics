@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-import footerLogo from "../assets/images/companyLogo/FooterCompany.png";
+import footerLogo from "../assets/images/companyLogo/footerCompany.png";
 import linkedin from "../assets/images/socialMedia/footlinkedin.png";
 import x from "../assets/images/socialMedia/xlogo.png";
 import telephone from "../assets/images/socialMedia/landline.png";
