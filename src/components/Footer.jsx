@@ -9,8 +9,8 @@ import telephone from "../assets/images/socialMedia/landline.png";
 
 const navLinks = [
   { label: "About Us", to: "/" },
-  { label: "Our Services", to: "/services" },
-  { label: "Contact Us", to: "/contact" },
+  { label: "Our Services", to: "/our-services" },
+  { label: "Contact Us", to: "/contact-us" },
   { label: "Career", to: "/career" },
 ];
 

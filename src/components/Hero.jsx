@@ -269,7 +269,7 @@ export default function Hero() {
               }`}
             >
               <button
-                onClick={() => navigate("/services")}
+                onClick={() => navigate("/our-services")}
                 className="btn-primary rounded-sm bg-brand-blue hover:outline-brand-blue hover:outline hover:outline-2 hover:bg-white hover:text-brand-blue transition-colors duration-200"
                 aria-label="Explore Services"
               >
@@ -278,7 +278,7 @@ export default function Hero() {
               </button>
 
               <button
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate("/contact-us")}
                 className="btn-outline hover:bg-brand-orange rounded-sm hover:text-white transition-colors duration-200"
                 aria-label="Get a Quote"
               >
