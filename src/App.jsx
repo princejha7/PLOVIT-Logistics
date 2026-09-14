@@ -15,8 +15,8 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/our-services" element={<Services />} />
+            <Route path="/contact-us" element={<Contact />} />
             <Route path="/career" element={<Career />} />
      
           </Routes>
