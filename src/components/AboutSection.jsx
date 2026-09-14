@@ -123,7 +123,7 @@ export default function AboutSection() {
 
             {/* Description */}
             <p
-              className={`text-gray-500 leading-relaxed text-base md:text-lg mb-8 transition-all duration-500 ease-out delay-300 ${
+              className={`text-gray-500 leading-relaxed text-justify text-base md:text-lg mb-8 transition-all duration-500 ease-out delay-300 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"

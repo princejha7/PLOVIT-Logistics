@@ -39,7 +39,7 @@ export default function Contact() {
 
     formData.append(
       "access_key",
-      "5d968e75-7458-40ec-8b0f-0cffbb0b1d22"
+      "9a9c2ea6-2d8c-4f4f-ba5e-14b47997d9a0"
     );
 
     formData.append(
@@ -292,9 +292,10 @@ export default function Contact() {
               {/* =====================================================
                 CORPORATE OFFICE
             ====================================================== */}
-            <div className="group rounded-xl border border-gray-200 bg-white p-3 lg:p-2 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange hover:bg-brand-orange hover:shadow-xl sm:p-6">
+            <div className="group rounded-xl border border-gray-200 bg-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange hover:bg-brand-orange hover:shadow-xl sm:p-6">
 
-              <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue text-white transition-all duration-300">
+
+              <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue text-white transition-all duration-300 ">
                 <MapPin size={22} />
               </div>
 

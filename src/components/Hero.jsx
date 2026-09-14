@@ -1,11 +1,13 @@
 ﻿import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import slideOne from "../assets/images/aboutUs/ocean.png"
+import slideSecond from "../assets/images/aboutUs/ship.png"
+import slideThree from "../assets/images/aboutUs/domestic.png"
 
 import {
   ArrowRight,
   Globe,
   Package,
-  Shield,
   Users,
   Headphones,
 } from "lucide-react";
@@ -13,8 +15,7 @@ import {
 const slides = [
   {
     id: 1,
-    image:
-      "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1400&q=85",
+    image:slideOne,
     heading: "Delivering Logistics Solutions",
     accent: "with Vitality & Velocity",
     subtext:
@@ -22,17 +23,15 @@ const slides = [
   },
   {
     id: 2,
-    image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1400&q=85",
-    heading: "Global Air Freight",
+    image:slideSecond,
+    heading: "Global Freight Services",
     accent: "Fast, Reliable & On Time",
     subtext:
-      "Time-critical shipments demand speed and precision. Our air freight network spans the globe to deliver your cargo when it matters most.",
+      "Time-critical shipments demand speed and precision. Our freight network spans the globe to deliver your cargo when it matters most.",
   },
   {
     id: 3,
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=85",
+    image:slideThree,
     heading: "Connecting Supply Chains",
     accent: "Across Every Mile",
     subtext:
@@ -43,15 +42,7 @@ const slides = [
 const features = [
   { icon: Globe, label: "Global Network" },
   { icon: Package, label: "End-to-End Solutions" },
-  // { icon: Shield, label: "Secure & Compliant" },
   { icon: Users, label: "Expert Support" },
-];
-
-const stats = [
-  { icon: Globe, value: "50+", label: "Countries Served" },
-  { icon: Package, value: "1000+", label: "Successful Shipments" },
-  { icon: Users, value: "500+", label: "Happy Clients" },
-  { icon: Shield, value: "10+", label: "Industry Certifications" },
 ];
 
 function AnimatedStatValue({ value }) {
@@ -132,7 +123,7 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(next, 7000);
+    const timer = setInterval(next, 10000);
 
     return () => clearInterval(timer);
   }, [next]);
@@ -388,44 +379,6 @@ export default function Hero() {
                 />
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* =========================
-          Stats Bar
-      ========================== */}
-
-      <div className="relative z-20 -mt-3 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl rounded-xl border border-gray-100 bg-white shadow-lg shadow-brand-blue/10">
-
-          <div className="grid grid-cols-2 divide-x divide-y divide-gray-100 md:grid-cols-4 md:divide-y-0">
-
-            {stats.map(
-              ({ icon: Icon, value, label }) => (
-                <div
-                  key={label}
-                  className="flex min-w-0 items-center gap-3 px-4 py-4 sm:px-6 md:gap-3.5 md:px-7 md:py-4"
-                >
-                  <Icon
-                    size={24}
-                    strokeWidth={1.7}
-                    className="flex-shrink-0 text-brand-orange"
-                  />
-
-                  <div>
-                    <div className="text-xl font-black leading-none text-brand-blue sm:text-2xl">
-                      <AnimatedStatValue value={value} />
-                    </div>
-
-                    <div className="mt-1 text-[10px] font-medium leading-tight text-gray-400 sm:text-xs">
-                      {label}
-                    </div>
-                  </div>
-                </div>
-              )
-            )}
-
           </div>
         </div>
       </div>
