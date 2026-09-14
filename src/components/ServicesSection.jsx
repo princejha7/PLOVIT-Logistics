@@ -302,7 +302,7 @@ export default function ServicesSection({ showAll = false }) {
             }}
           >
             <button
-              onClick={() => navigate("/services")}
+              onClick={() => navigate("/our-services")}
               aria-label="View all services"
               className="
                 group
