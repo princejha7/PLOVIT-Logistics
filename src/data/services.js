@@ -6,6 +6,17 @@ import odcProjectCargoIcon from "../assets/images/servicesIcon/odc-project-cargo
 import supplyChainSolutionsIcon from "../assets/images/servicesIcon/supply-chain-solutions-icon.png";
 import consultancyServicesIcon from "../assets/images/servicesIcon/consultancy-services-icon.png";
 
+
+// service images
+
+import airServiceImage from "../assets/images/services/air.png";
+import consultancyServiceImage from "../assets/images/services/consultancy.png";
+import customsServiceImage from "../assets/images/services/customs.png";
+import domesticServiceImage from "../assets/images/services/domestic.png";
+import oceanServiceImage from "../assets/images/services/ocean.png";
+import odcServiceImage from "../assets/images/services/odc.png";
+import supplyChainServiceImage from "../assets/images/services/supplyChain.png";
+
 export const services = [
   {
     id: 1,
@@ -27,7 +38,7 @@ export const services = [
     icon: airFreightIcon,
 
     image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80",
+      airServiceImage,
   },
 
   {
@@ -51,7 +62,7 @@ export const services = [
     icon: oceanFreightIcon,
 
     image:
-      "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80",
+      oceanServiceImage,
   },
 
   {
@@ -72,7 +83,7 @@ export const services = [
     icon: customsClearanceIcon,
 
     image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+      customsServiceImage,
   },
 
   {
@@ -93,7 +104,7 @@ export const services = [
       domesticTransportationIcon,
 
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      domesticServiceImage,
   },
 
   {
@@ -112,7 +123,7 @@ export const services = [
     icon: odcProjectCargoIcon,
 
     image:
-      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
+      odcServiceImage,
   },
 
   {
@@ -136,7 +147,7 @@ export const services = [
       supplyChainSolutionsIcon,
 
     image:
-      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80",
+      supplyChainServiceImage,
   },
 
   {
@@ -158,6 +169,6 @@ export const services = [
       consultancyServicesIcon,
 
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+      consultancyServiceImage,
   },
 ];

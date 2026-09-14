@@ -51,24 +51,14 @@ export default function Navbar() {
 
             <Link
               to="/"
-              className="flex items-center gap-2.5 flex-shrink-0"
+              className="flex items-center"
               aria-label="PLOVIT Logistics Home"
             >
               <img
                 src={logo}
                 alt="PLOVIT Logistics"
-                className="h-20 w-20 mt-2 object-contain"
+                className="h-20 w-40  object-contain"
               />
-
-              <div className="leading-none">
-                <div className="text-brand-orange font-black text-xl tracking-[0.15em]">
-                  PLOVIT
-                </div>
-
-                <div className="text-brand-blue text-[9px] tracking-[0.35em] font-semibold mt-0.5 opacity-70">
-                  LOGISTICS
-                </div>
-              </div>
             </Link>
 
             {/* =========================
