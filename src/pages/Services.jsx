@@ -1,10 +1,5 @@
 ﻿import { useState } from "react";
-import {
-  ArrowRight,
-  ChevronRight,
-  CheckCircle,
-  XCircle,
-} from "lucide-react";
+import { ArrowRight, ChevronRight, CheckCircle, XCircle } from "lucide-react";
 
 import { services } from "../data/services";
 
@@ -36,33 +31,23 @@ export default function Services() {
     const formData = new FormData(form);
 
     // Web3Forms Access Key
-    formData.append(
-      "access_key",
-      "9a9c2ea6-2d8c-4f4f-ba5e-14b47997d9a0"
-    );
+    formData.append("access_key", "9a9c2ea6-2d8c-4f4f-ba5e-14b47997d9a0");
 
     // Email subject
-    formData.append(
-      "subject",
-      "New Service Inquiry - PLOVIT Logistics"
-    );
+    formData.append("subject", "New Service Inquiry - Plovit Logistics");
 
     try {
-      const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
       const data = await response.json();
 
       if (data.success) {
         setStatus({
           type: "success",
-          message:
-            "Thank you! Your inquiry has been sent successfully.",
+          message: "Thank you! Your inquiry has been sent successfully.",
         });
 
         // Reset form
@@ -78,9 +63,7 @@ export default function Services() {
       } else {
         setStatus({
           type: "error",
-          message:
-            data.message ||
-            "Something went wrong. Please try again.",
+          message: data.message || "Something went wrong. Please try again.",
         });
       }
     } catch (error) {
@@ -98,7 +81,6 @@ export default function Services() {
 
   return (
     <main className="bg-white">
-
       {/* =========================================================
           POPUP NOTIFICATION
       ========================================================== */}
@@ -106,9 +88,7 @@ export default function Services() {
         <div className="fixed right-5 top-5 z-[9999] animate-[slideIn_0.4s_ease-out]">
           <div
             className={`flex min-w-[320px] max-w-[420px] items-center gap-3 rounded-xl border bg-white px-5 py-4 shadow-2xl ${
-              status.type === "success"
-                ? "border-green-200"
-                : "border-red-200"
+              status.type === "success" ? "border-green-200" : "border-red-200"
             }`}
           >
             {/* ICON */}
@@ -130,14 +110,10 @@ export default function Services() {
             <div className="flex-1">
               <p
                 className={`text-sm font-semibold ${
-                  status.type === "success"
-                    ? "text-green-700"
-                    : "text-red-700"
+                  status.type === "success" ? "text-green-700" : "text-red-700"
                 }`}
               >
-                {status.type === "success"
-                  ? "Success"
-                  : "Error"}
+                {status.type === "success" ? "Success" : "Error"}
               </p>
 
               <p className="mt-1 text-sm leading-5 text-gray-600">
@@ -168,7 +144,6 @@ export default function Services() {
       ========================================================== */}
       <section className="overflow-hidden py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
           {/* SECTION HEADING */}
           <div className="mb-12 mt-9">
             <p className="text-sm font-bold tracking-[0.18em] text-brand-orange">
@@ -186,23 +161,19 @@ export default function Services() {
               25 / 75 LAYOUT
           ====================================================== */}
           <div className="flex flex-col gap-8 lg:flex-row lg:gap-12">
-
             {/* =====================================================
                 LEFT - 25%
             ====================================================== */}
             <div className="w-full lg:w-[25%]">
               <div className="flex flex-col">
                 {services.map((service) => {
-                  const isActive =
-                    selectedService.id === service.id;
+                  const isActive = selectedService.id === service.id;
 
                   return (
                     <button
                       key={service.id}
                       type="button"
-                      onClick={() =>
-                        setSelectedService(service)
-                      }
+                      onClick={() => setSelectedService(service)}
                       className={`
                         group relative flex w-full items-center gap-3
                         rounded-lg border-b border-gray-100
@@ -221,11 +192,7 @@ export default function Services() {
                           absolute bottom-0 left-0 top-0 w-1
                           bg-brand-blue
                           transition-all duration-300
-                          ${
-                            isActive
-                              ? "opacity-100"
-                              : "opacity-0"
-                          }
+                          ${isActive ? "opacity-100" : "opacity-0"}
                         `}
                       />
 
@@ -342,13 +309,9 @@ export default function Services() {
       {/* =========================================================
           LET'S CONNECT
       ========================================================== */}
-      <section
-        id="lets-connect"
-        className="bg-gray-50 py-16 md:py-24"
-      >
+      <section id="lets-connect" className="bg-gray-50 py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-
             {/* =====================================================
                 LEFT CONTENT
             ====================================================== */}
@@ -369,13 +332,12 @@ export default function Services() {
 
               <p className="max-w-xl leading-relaxed text-gray-500">
                 Have a logistics requirement or looking for the right
-                transportation solution? Get in touch with our team and
-                let's find the right solution for your business.
+                transportation solution? Get in touch with our team and let's
+                find the right solution for your business.
               </p>
 
               {/* FEATURES */}
               <div className="mt-8 space-y-4">
-
                 <div className="flex items-center gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue text-white">
                     <ArrowRight size={17} />
@@ -405,7 +367,6 @@ export default function Services() {
                     Reliable customer support
                   </span>
                 </div>
-
               </div>
             </div>
 
@@ -413,7 +374,6 @@ export default function Services() {
                 FORM
             ====================================================== */}
             <div className="rounded-2xl bg-white p-6 shadow-lg sm:p-8 md:p-10">
-
               <h3 className="mb-2 text-2xl font-bold text-brand-blue">
                 Get in Touch
               </h3>
@@ -422,17 +382,10 @@ export default function Services() {
                 Tell us about your requirement.
               </p>
 
-              <form
-                className="space-y-5"
-                onSubmit={onSubmit}
-              >
-
+              <form className="space-y-5" onSubmit={onSubmit}>
                 {/* NAME */}
                 <div>
-                  <label
-                    htmlFor="service-name"
-                    className="sr-only"
-                  >
+                  <label htmlFor="service-name" className="sr-only">
                     Your Name
                   </label>
 
@@ -463,10 +416,7 @@ export default function Services() {
 
                 {/* COMPANY */}
                 <div>
-                  <label
-                    htmlFor="service-company"
-                    className="sr-only"
-                  >
+                  <label htmlFor="service-company" className="sr-only">
                     Company Name
                   </label>
 
@@ -497,10 +447,7 @@ export default function Services() {
 
                 {/* EMAIL */}
                 <div>
-                  <label
-                    htmlFor="service-email"
-                    className="sr-only"
-                  >
+                  <label htmlFor="service-email" className="sr-only">
                     Email Address
                   </label>
 
@@ -531,10 +478,7 @@ export default function Services() {
 
                 {/* PHONE */}
                 <div>
-                  <label
-                    htmlFor="service-phone"
-                    className="sr-only"
-                  >
+                  <label htmlFor="service-phone" className="sr-only">
                     Phone Number
                   </label>
 
@@ -565,10 +509,7 @@ export default function Services() {
 
                 {/* SERVICE */}
                 <div>
-                  <label
-                    htmlFor="service-select"
-                    className="sr-only"
-                  >
+                  <label htmlFor="service-select" className="sr-only">
                     Service Required
                   </label>
 
@@ -598,13 +539,9 @@ export default function Services() {
                       Service Required *
                     </option>
 
-                    <option value="Air Freight">
-                      Air Freight
-                    </option>
+                    <option value="Air Freight">Air Freight</option>
 
-                    <option value="Ocean Freight">
-                      Ocean Freight
-                    </option>
+                    <option value="Ocean Freight">Ocean Freight</option>
 
                     <option value="Customs Clearance Services">
                       Customs Clearance Services
@@ -626,18 +563,13 @@ export default function Services() {
                       Consultancy Services
                     </option>
 
-                    <option value="Other">
-                      Other
-                    </option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
                 {/* MESSAGE */}
                 <div>
-                  <label
-                    htmlFor="service-message"
-                    className="sr-only"
-                  >
+                  <label htmlFor="service-message" className="sr-only">
                     Your Message
                   </label>
 
@@ -693,9 +625,7 @@ export default function Services() {
                     disabled:opacity-70
                   "
                 >
-                  {isSubmitting
-                    ? "Sending..."
-                    : "Send Message"}
+                  {isSubmitting ? "Sending..." : "Send Message"}
 
                   {!isSubmitting && (
                     <ArrowRight

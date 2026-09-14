@@ -9,7 +9,7 @@ import CTASection from "../components/CTASection";
 
 export default function About() {
   useEffect(() => {
-    document.title = "PLOVIT Logistics";
+    document.title = "Plovit Logistics";
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
       meta = document.createElement("meta");
@@ -18,7 +18,7 @@ export default function About() {
     }
     meta.setAttribute(
       "content",
-      "PLOVIT Logistics - End-to-end global logistics solutions including ocean freight, air freight, customs clearance, Supply Chain Solutions and more.",
+      "Plovit Logistics - End-to-end global logistics solutions including ocean freight, air freight, customs clearance, Supply Chain Solutions and more.",
     );
   }, []);
 

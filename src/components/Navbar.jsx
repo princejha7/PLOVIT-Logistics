@@ -37,14 +37,11 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-white shadow-md"
-            : "bg-white border-b border-gray-100"
+          scrolled ? "bg-white shadow-md" : "bg-white border-b border-gray-100"
         }`}
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
-
             {/* =========================
                 LOGO
             ========================= */}
@@ -52,11 +49,11 @@ export default function Navbar() {
             <Link
               to="/"
               className="flex items-center"
-              aria-label="PLOVIT Logistics Home"
+              aria-label="Plovit Logistics Home"
             >
               <img
                 src={logo}
-                alt="PLOVIT Logistics"
+                alt="Plovit Logistics"
                 className="h-20 w-40  object-contain"
               />
             </Link>
@@ -66,7 +63,6 @@ export default function Navbar() {
             ========================= */}
 
             <div className="hidden md:flex items-center gap-7">
-
               {navLinks.map((link) => (
                 <NavLink
                   key={link.to}
@@ -89,7 +85,7 @@ export default function Navbar() {
                 href="https://www.linkedin.com/company/plovit-logistics-private-limited"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="PLOVIT Logistics LinkedIn"
+                aria-label="Plovit Logistics LinkedIn"
                 className="group flex items-center justify-center"
               >
                 <img
@@ -113,14 +109,9 @@ export default function Navbar() {
                 <span className="quote-button-lg">
                   <span className="quote-button-sl" />
 
-                  <span className="quote-button-text">
-                    GET A QUOTE
-                  </span>
+                  <span className="quote-button-text">GET A QUOTE</span>
 
-                  <ArrowRight
-                    size={15}
-                    className="quote-button-arrow"
-                  />
+                  <ArrowRight size={15} className="quote-button-arrow" />
                 </span>
               </button>
             </div>
@@ -135,11 +126,7 @@ export default function Navbar() {
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
             >
-              {isOpen ? (
-                <X size={24} />
-              ) : (
-                <Menu size={24} />
-              )}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
 
@@ -150,7 +137,6 @@ export default function Navbar() {
           {isOpen && (
             <div className="md:hidden border-t border-gray-100 py-3 animate-fade-in">
               <div className="flex flex-col">
-
                 {navLinks.map((link) => (
                   <NavLink
                     key={link.to}
@@ -195,14 +181,9 @@ export default function Navbar() {
                     <span className="quote-button-lg w-full">
                       <span className="quote-button-sl" />
 
-                      <span className="quote-button-text">
-                        GET A QUOTE
-                      </span>
+                      <span className="quote-button-text">GET A QUOTE</span>
 
-                      <ArrowRight
-                        size={15}
-                        className="quote-button-arrow"
-                      />
+                      <ArrowRight size={15} className="quote-button-arrow" />
                     </span>
                   </button>
                 </div>

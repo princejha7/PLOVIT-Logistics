@@ -11,17 +11,17 @@ const slides = [
   {
     id: 1,
     image: contactBuilding,
-    heading: "PLOVIT Logistics",
+    heading: "Plovit Logistics",
   },
   {
     id: 2,
     image: companyRes,
-    heading: "PLOVIT Logistics",
+    heading: "Plovit Logistics",
   },
   {
     id: 3,
     image: companyBuilding,
-    heading: "PLOVIT Logistics",
+    heading: "Plovit Logistics",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function AboutSection() {
       },
       {
         threshold: 0.2,
-      }
+      },
     );
 
     observer.observe(section);
@@ -82,14 +82,12 @@ export default function AboutSection() {
       ref={sectionRef}
       id="about"
       className="py-7 md:py-11 bg-brand-gray"
-      aria-label="About PLOVIT Logistics"
+      aria-label="About Plovit Logistics"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
           {/* ================= LEFT ================= */}
           <div>
-
             {/* Label */}
             <p
               className={`section-label transition-all duration-500 ease-out ${
@@ -129,9 +127,18 @@ export default function AboutSection() {
                   : "translate-y-4 opacity-0"
               }`}
             >
-              is a leading freight forwarding & logistics company based in Noida, founded by industry experts. We have rapidly expanded our presence across India, now operating from over 29 locations, including branches in Mumbai, Mundra, and Chennai. <br />
-Our journey in the logistics industry began in 2020, well before our official registration in 2025 This early start allowed us to build valuable expertise, establish strong industry relationships, and develop a deep understanding of our clients’ needs. <br />
-We offer a comprehensive range of logistics solutions, including international logistics, customs brokerage, warehousing, cross-border trade, and project cargo movement along with supply chain consultancy.
+              is a leading freight forwarding & logistics company based in
+              Noida, founded by industry experts. We have rapidly expanded our
+              presence across India, now operating from over 29 locations,
+              including branches in Mumbai, Mundra, and Chennai. <br />
+              Our journey in the logistics industry began in 2020, well before
+              our official registration in 2025 This early start allowed us to
+              build valuable expertise, establish strong industry relationships,
+              and develop a deep understanding of our clients’ needs. <br />
+              We offer a comprehensive range of logistics solutions, including
+              international logistics, customs brokerage, warehousing,
+              cross-border trade, and project cargo movement along with supply
+              chain consultancy.
             </p>
 
             {/* ================= GET IN TOUCH BUTTON ================= */}
@@ -143,9 +150,8 @@ We offer a comprehensive range of logistics solutions, including international l
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
               }`}
-              aria-label="Get in touch with PLOVIT Logistics"
+              aria-label="Get in touch with Plovit Logistics"
             >
-
               {/* Outer Top Border */}
               <span
                 className="
@@ -199,7 +205,6 @@ We offer a comprehensive range of logistics solutions, including international l
                   text-white
                 "
               >
-
                 {/* Orange Sliding Layer */}
                 <span
                   className="
@@ -218,9 +223,7 @@ We offer a comprehensive range of logistics solutions, including international l
                 />
 
                 {/* Button Text */}
-                <span className="relative z-10">
-                  Let's Connect
-                </span>
+                <span className="relative z-10">Let's Connect</span>
 
                 {/* Arrow */}
                 <ArrowRight
@@ -250,7 +253,6 @@ We offer a comprehensive range of logistics solutions, including international l
               shadow-2xl
             "
           >
-
             {/* Slides */}
             {slides.map((slide, index) => (
               <img
@@ -265,11 +267,7 @@ We offer a comprehensive range of logistics solutions, including international l
                   object-cover
                   transition-opacity
                   duration-700
-                  ${
-                    index === current
-                      ? "opacity-100"
-                      : "opacity-0"
-                  }
+                  ${index === current ? "opacity-100" : "opacity-0"}
                 `}
               />
             ))}
@@ -313,9 +311,7 @@ We offer a comprehensive range of logistics solutions, including international l
                     }
                   `}
                   aria-label={`Go to slide ${index + 1}`}
-                  aria-current={
-                    index === current ? "true" : undefined
-                  }
+                  aria-current={index === current ? "true" : undefined}
                 />
               ))}
             </div>

@@ -1,11 +1,5 @@
 ﻿import { Link } from "react-router-dom";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  ExternalLink,
-  ArrowRight,
-} from "lucide-react";
+import { MapPin, Phone, Mail, ExternalLink, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import footerLogo from "../assets/images/companyLogo/footerCompanyLogo.png";
@@ -38,7 +32,7 @@ export default function Footer() {
       },
       {
         threshold: 0.15,
-      }
+      },
     );
 
     observer.observe(footer);
@@ -54,28 +48,25 @@ export default function Footer() {
           ? "translate-y-0 scale-100 opacity-100"
           : "translate-y-4 scale-[0.96] opacity-0"
       }`}
-      aria-label="PLOVIT Logistics Footer"
+      aria-label="Plovit Logistics Footer"
     >
       <div className="mx-auto max-w-7xl px-4 py-14 pb-6 sm:px-6 lg:px-8">
-
         {/* =====================================================
             MAIN FOOTER
         ====================================================== */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-
           {/* ===================================================
               BRAND
           ==================================================== */}
           <div className="min-w-0 lg:pr-4">
-
             <Link
               to="/"
               className="mb-4 inline-flex items-start"
-              aria-label="PLOVIT Logistics Home"
+              aria-label="Plovit Logistics Home"
             >
               <img
                 src={footerLogo}
-                alt="PLOVIT Logistics"
+                alt="Plovit Logistics"
                 className="block h-20 w-40 object-contain object-left"
               />
             </Link>
@@ -91,7 +82,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors duration-200 hover:text-brand-orange"
-              aria-label="PLOVIT Logistics on LinkedIn"
+              aria-label="Plovit Logistics on LinkedIn"
             >
               <ExternalLink size={17} />
               Follow on LinkedIn
@@ -102,7 +93,6 @@ export default function Footer() {
               NAVIGATION
           ==================================================== */}
           <div className="min-w-0">
-
             <h3 className="mb-5 text-xs font-bold uppercase tracking-widest text-white">
               Navigation
             </h3>
@@ -126,13 +116,11 @@ export default function Footer() {
               CONTACT
           ==================================================== */}
           <div className="min-w-0 lg:max-w-[260px]">
-
             <h3 className="mb-5 text-xs font-bold uppercase tracking-widest text-white">
               Contact Us
             </h3>
 
             <ul className="space-y-4">
-
               {/* Corporate Address */}
               <li className="flex items-start gap-3 text-sm text-white/60">
                 <MapPin
@@ -141,8 +129,8 @@ export default function Footer() {
                 />
 
                 <span className="leading-6">
-                  Corporate Address: 942, 9th Floor, Astralis Supernova,
-                  Sector 94, Noida, Uttar Pradesh 201301, India
+                  Corporate Address: 942, 9th Floor, Astralis Supernova, Sector
+                  94, Noida, Uttar Pradesh 201301, India
                 </span>
               </li>
 
@@ -154,17 +142,14 @@ export default function Footer() {
                 />
 
                 <span className="leading-6">
-                  Registered Address: C-84, Ground Floor, Nai Basti,
-                  Jamia Nagar, South Delhi, Delhi 110025, India
+                  Registered Address: C-84, Ground Floor, Nai Basti, Jamia
+                  Nagar, South Delhi, Delhi 110025, India
                 </span>
               </li>
 
               {/* Mobile */}
               <li className="flex items-center gap-3 text-sm text-white/60">
-                <Phone
-                  size={15}
-                  className="flex-shrink-0 text-brand-orange"
-                />
+                <Phone size={15} className="flex-shrink-0 text-brand-orange" />
 
                 <a
                   href="tel:+919315111174"
@@ -192,10 +177,7 @@ export default function Footer() {
 
               {/* Email */}
               <li className="flex items-center gap-3 text-sm text-white/60">
-                <Mail
-                  size={15}
-                  className="flex-shrink-0 text-brand-orange"
-                />
+                <Mail size={15} className="flex-shrink-0 text-brand-orange" />
 
                 <a
                   href="mailto:info@plovitlogistics.com"
@@ -204,7 +186,6 @@ export default function Footer() {
                   info@plovitlogistics.com
                 </a>
               </li>
-
             </ul>
           </div>
 
@@ -212,13 +193,11 @@ export default function Footer() {
               SOCIAL MEDIA
           ==================================================== */}
           <div className="min-w-0">
-
             <h3 className="mb-5 text-xs font-bold uppercase tracking-widest text-white">
               Social Media
             </h3>
 
             <ul className="space-y-4">
-
               {/* LinkedIn */}
               <li>
                 <a
@@ -226,14 +205,13 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors duration-200 hover:text-brand-orange"
-                  aria-label="PLOVIT Logistics on LinkedIn"
+                  aria-label="Plovit Logistics on LinkedIn"
                 >
                   <img
                     src={linkedin}
                     alt="LinkedIn"
                     className="h-5 w-5 object-contain"
                   />
-
                   LinkedIn
                 </a>
               </li>
@@ -245,36 +223,24 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors duration-200 hover:text-brand-orange"
-                  aria-label="PLOVIT Logistics on X"
+                  aria-label="Plovit Logistics on X"
                 >
-                  <img
-                    src={x}
-                    alt="X"
-                    className="h-4 w-4 object-contain"
-                  />
-
-                  X
+                  <img src={x} alt="X" className="h-4 w-4 object-contain" />X
                 </a>
               </li>
-
             </ul>
           </div>
-
         </div>
 
         {/* =====================================================
             BOTTOM
         ====================================================== */}
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 sm:flex-row">
-
           <p className="mx-auto text-center text-sm text-white/40">
             &copy; {new Date().getFullYear()} Plovit Logistics Private Limited
           </p>
-
         </div>
-
       </div>
     </footer>
   );
 }
-

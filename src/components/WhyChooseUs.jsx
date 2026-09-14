@@ -57,7 +57,7 @@ export default function WhyChooseUs() {
       },
       {
         threshold: 0.15,
-      }
+      },
     );
 
     observer.observe(section);
@@ -73,10 +73,9 @@ export default function WhyChooseUs() {
           ? "translate-y-0 scale-100 opacity-100"
           : "translate-y-4 scale-[0.96] opacity-0"
       }`}
-      aria-label="Why Choose PLOVIT Logistics"
+      aria-label="Why Choose Plovit Logistics"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Section Heading */}
         <div className="text-center mb-12">
           <p className="section-label">WHY CHOOSE US?</p>

@@ -1,10 +1,5 @@
 ﻿import { useEffect, useRef, useState } from "react";
-import {
-  ArrowRight,
-  CheckCircle,
-  AlertCircle,
-  X,
-} from "lucide-react";
+import { ArrowRight, CheckCircle, AlertCircle, X } from "lucide-react";
 
 import backgroundImage from "../assets/images/CTA/background-image.png";
 
@@ -57,7 +52,7 @@ export default function CTASection() {
       },
       {
         threshold: 0.15,
-      }
+      },
     );
 
     observer.observe(section);
@@ -77,9 +72,7 @@ export default function CTASection() {
 
     if (!form.phone.trim()) {
       errs.phone = "Contact number is required.";
-    } else if (
-      !/^[+\d][\d\s()-]{7,}$/.test(form.phone.trim())
-    ) {
+    } else if (!/^[+\d][\d\s()-]{7,}$/.test(form.phone.trim())) {
       errs.phone = "Enter a valid contact number.";
     }
 
@@ -147,31 +140,22 @@ export default function CTASection() {
     const formElement = e.currentTarget;
     const formData = new FormData(formElement);
 
-    formData.append(
-      "access_key",
-      "9a9c2ea6-2d8c-4f4f-ba5e-14b47997d9a0"
-    );
+    formData.append("access_key", "9a9c2ea6-2d8c-4f4f-ba5e-14b47997d9a0");
 
-    formData.append(
-      "subject",
-      "New Enquiry - PLOVIT Logistics"
-    );
+    formData.append("subject", "New Enquiry - Plovit Logistics");
 
     // Convert FormData -> JSON
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
       const result = await response.json();
 
@@ -182,7 +166,7 @@ export default function CTASection() {
 
         showPopup(
           "success",
-          "Thank you! Your enquiry has been sent successfully."
+          "Thank you! Your enquiry has been sent successfully.",
         );
 
         setForm({
@@ -202,8 +186,7 @@ export default function CTASection() {
 
         showPopup(
           "error",
-          result.message ||
-            "Something went wrong. Please try again."
+          result.message || "Something went wrong. Please try again.",
         );
       }
     } catch (error) {
@@ -211,7 +194,7 @@ export default function CTASection() {
 
       showPopup(
         "error",
-        "Unable to send your enquiry. Please check your internet connection."
+        "Unable to send your enquiry. Please check your internet connection.",
       );
     } finally {
       setIsSubmitting(false);
@@ -223,9 +206,7 @@ export default function CTASection() {
   // =========================================================
   const inputCls = (name) =>
     `w-full rounded-lg border px-3.5 py-2.5 text-sm text-gray-800 outline-none transition-colors duration-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/15 ${
-      errors[name]
-        ? "border-red-400 bg-red-50"
-        : "border-gray-200 bg-gray-50"
+      errors[name] ? "border-red-400 bg-red-50" : "border-gray-200 bg-gray-50"
     }`;
 
   return (
@@ -237,9 +218,7 @@ export default function CTASection() {
         <div className="fixed right-5 top-5 z-[9999]">
           <div
             className={`flex w-[calc(100vw-40px)] max-w-[420px] items-start gap-3 rounded-xl border bg-white px-5 py-4 shadow-2xl ${
-              popup.type === "success"
-                ? "border-green-200"
-                : "border-red-200"
+              popup.type === "success" ? "border-green-200" : "border-red-200"
             }`}
           >
             {/* ICON */}
@@ -261,14 +240,10 @@ export default function CTASection() {
             <div className="flex-1">
               <p
                 className={`text-sm font-bold ${
-                  popup.type === "success"
-                    ? "text-green-700"
-                    : "text-red-700"
+                  popup.type === "success" ? "text-green-700" : "text-red-700"
                 }`}
               >
-                {popup.type === "success"
-                  ? "Success"
-                  : "Error"}
+                {popup.type === "success" ? "Success" : "Error"}
               </p>
 
               <p className="mt-1 text-sm leading-5 text-gray-600">
@@ -310,7 +285,6 @@ export default function CTASection() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-stretch gap-8 lg:grid-cols-[1fr_1.05fr] lg:gap-12">
-            
             {/* =================================================
                 LEFT CONTENT
             ================================================== */}
@@ -347,18 +321,13 @@ export default function CTASection() {
             <div className="rounded-2xl bg-brand-blue p-6 shadow-xl shadow-brand-blue/15 sm:p-8 lg:p-9">
               {submitted ? (
                 <div className="flex min-h-[300px] flex-col items-center justify-center gap-4 py-8 text-center">
-                  <CheckCircle
-                    size={48}
-                    className="text-green-500"
-                  />
+                  <CheckCircle size={48} className="text-green-500" />
 
-                  <h3 className="text-xl font-bold text-white">
-                    Thank you!
-                  </h3>
+                  <h3 className="text-xl font-bold text-white">Thank you!</h3>
 
                   <p className="text-sm text-white/65">
-                    We have received your enquiry and will get back
-                    to you shortly.
+                    We have received your enquiry and will get back to you
+                    shortly.
                   </p>
                 </div>
               ) : (
@@ -389,10 +358,7 @@ export default function CTASection() {
                   ================================================== */}
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
-                      <label
-                        htmlFor="name"
-                        className="sr-only"
-                      >
+                      <label htmlFor="name" className="sr-only">
                         Your Name
                       </label>
 
@@ -407,10 +373,7 @@ export default function CTASection() {
                     </div>
 
                     <div>
-                      <label
-                        htmlFor="company"
-                        className="sr-only"
-                      >
+                      <label htmlFor="company" className="sr-only">
                         Company Name
                       </label>
 
@@ -437,10 +400,7 @@ export default function CTASection() {
                   ================================================== */}
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
-                      <label
-                        htmlFor="email"
-                        className="sr-only"
-                      >
+                      <label htmlFor="email" className="sr-only">
                         Email Address
                       </label>
 
@@ -455,10 +415,7 @@ export default function CTASection() {
                     </div>
 
                     <div>
-                      <label
-                        htmlFor="phone"
-                        className="sr-only"
-                      >
+                      <label htmlFor="phone" className="sr-only">
                         Phone Number
                       </label>
 
@@ -484,10 +441,7 @@ export default function CTASection() {
                       SERVICE
                   ================================================== */}
                   <div>
-                    <label
-                      htmlFor="service"
-                      className="sr-only"
-                    >
+                    <label htmlFor="service" className="sr-only">
                       Service Required
                     </label>
 
@@ -502,13 +456,9 @@ export default function CTASection() {
                         Service Required *
                       </option>
 
-                      <option value="air-freight">
-                        Air Freight
-                      </option>
+                      <option value="air-freight">Air Freight</option>
 
-                      <option value="ocean-freight">
-                        Ocean Freight
-                      </option>
+                      <option value="ocean-freight">Ocean Freight</option>
 
                       <option value="Customs Clearance Services">
                         Customs Clearance Services
@@ -530,9 +480,7 @@ export default function CTASection() {
                         Consultancy Services
                       </option>
 
-                      <option value="other">
-                        Other
-                      </option>
+                      <option value="other">Other</option>
                     </select>
 
                     {errors.service && (
@@ -546,10 +494,7 @@ export default function CTASection() {
                       MESSAGE
                   ================================================== */}
                   <div>
-                    <label
-                      htmlFor="message"
-                      className="sr-only"
-                    >
+                    <label htmlFor="message" className="sr-only">
                       Your Message
                     </label>
 
@@ -571,9 +516,7 @@ export default function CTASection() {
                     disabled={isSubmitting}
                     className="group inline-flex h-12 items-center justify-center gap-2 rounded-md bg-brand-orange px-6 text-sm font-semibold uppercase text-white transition-all duration-300 hover:gap-3 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70"
                   >
-                    {isSubmitting
-                      ? "Sending..."
-                      : "Send Message"}
+                    {isSubmitting ? "Sending..." : "Send Message"}
 
                     {!isSubmitting && (
                       <ArrowRight

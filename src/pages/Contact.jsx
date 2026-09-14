@@ -37,32 +37,25 @@ export default function Contact() {
     const form = event.target;
     const formData = new FormData(form);
 
-    formData.append(
-      "access_key",
-      "9a9c2ea6-2d8c-4f4f-ba5e-14b47997d9a0"
-    );
+    formData.append("access_key", "9a9c2ea6-2d8c-4f4f-ba5e-14b47997d9a0");
 
     formData.append(
       "subject",
-      "New Contact Form Submission - PLOVIT Logistics"
+      "New Contact Form Submission - Plovit Logistics",
     );
 
     try {
-      const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
       const data = await response.json();
 
       if (data.success) {
         setStatus({
           type: "success",
-          message:
-            "Thank you! Your message has been sent successfully.",
+          message: "Thank you! Your message has been sent successfully.",
         });
 
         form.reset();
@@ -76,9 +69,7 @@ export default function Contact() {
       } else {
         setStatus({
           type: "error",
-          message:
-            data.message ||
-            "Something went wrong. Please try again.",
+          message: data.message || "Something went wrong. Please try again.",
         });
       }
     } catch (error) {
@@ -96,7 +87,6 @@ export default function Contact() {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-brand-blue pt-14 sm:pt-16 lg:pt-16">
-
       {/* =========================================================
           POPUP MESSAGE
       ========================================================== */}
@@ -104,9 +94,7 @@ export default function Contact() {
         <div className="fixed right-3 top-3 z-[9999] sm:right-5 sm:top-5">
           <div
             className={`flex w-[calc(100vw-24px)] max-w-[420px] items-center gap-3 rounded-xl border bg-white px-4 py-4 shadow-2xl sm:px-5 ${
-              status.type === "success"
-                ? "border-green-200"
-                : "border-red-200"
+              status.type === "success" ? "border-green-200" : "border-red-200"
             }`}
           >
             {/* ICON */}
@@ -128,9 +116,7 @@ export default function Contact() {
             <div className="min-w-0 flex-1">
               <p
                 className={`text-sm font-semibold ${
-                  status.type === "success"
-                    ? "text-green-700"
-                    : "text-red-700"
+                  status.type === "success" ? "text-green-700" : "text-red-700"
                 }`}
               >
                 {status.type === "success" ? "Success" : "Error"}
@@ -164,19 +150,16 @@ export default function Contact() {
           Same width system as About/Career page.
       ========================================================== */}
       <div className="mx-auto w-full max-w-7xl">
-
         {/* =======================================================
             HERO
         ======================================================== */}
         <section className="relative overflow-hidden">
           <div className="grid grid-cols-1 items-center lg:grid-cols-2">
-
             {/* =====================================================
                 LEFT CONTENT
             ====================================================== */}
             <div className="relative z-20 flex items-center bg-white px-5 py-10 sm:px-8 sm:py-12 md:px-10 lg:px-12 lg:py-16 xl:px-14">
               <div className="w-full max-w-xl">
-
                 {/* LABEL */}
                 <p className="mb-3 text-xs font-bold uppercase tracking-[0.15em] text-brand-orange sm:mb-4 sm:text-sm sm:tracking-wide">
                   CONTACT US
@@ -194,7 +177,8 @@ export default function Contact() {
 
                 {/* DESCRIPTION */}
                 <p className="mt-5 max-w-lg text-sm leading-6 text-gray-500 sm:mt-6 sm:text-base sm:leading-7 lg:text-lg">
-                  Have a question or need a logistics solution?<br/>
+                  Have a question or need a logistics solution?
+                  <br />
                   Reach out to our team for the best services.
                 </p>
               </div>
@@ -207,7 +191,7 @@ export default function Contact() {
               <div className="relative h-[240px] w-full overflow-hidden rounded-xl sm:h-[340px] md:h-[390px] lg:h-[430px] xl:h-[460px]">
                 <img
                   src={companybuilding}
-                  alt="PLOVIT Logistics"
+                  alt="Plovit Logistics"
                   className="h-full w-full object-cover object-center"
                 />
 
@@ -226,7 +210,6 @@ export default function Contact() {
                 TELEPHONE
             ====================================================== */}
             <div className="group rounded-xl border border-gray-200 bg-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange hover:bg-brand-orange hover:shadow-xl sm:p-6">
-
               <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue transition-all duration-300">
                 <img
                   src={telephone}
@@ -251,7 +234,6 @@ export default function Contact() {
                 PHONE
             ====================================================== */}
             <div className="group rounded-xl border border-gray-200 bg-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange hover:bg-brand-orange hover:shadow-xl sm:p-6">
-
               <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue text-white transition-all duration-300 ">
                 <Phone size={22} />
               </div>
@@ -272,7 +254,6 @@ export default function Contact() {
                 EMAIL
             ====================================================== */}
             <div className="group rounded-xl border border-gray-200 bg-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange hover:bg-brand-orange hover:shadow-xl sm:p-6">
-
               <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue text-white transition-all duration-300 ">
                 <Mail size={22} />
               </div>
@@ -289,12 +270,10 @@ export default function Contact() {
               </a>
             </div>
 
-              {/* =====================================================
+            {/* =====================================================
                 CORPORATE OFFICE
             ====================================================== */}
             <div className="group rounded-xl border border-gray-200 bg-white p-5 text-center shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange hover:bg-brand-orange hover:shadow-xl sm:p-6">
-
-
               <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-brand-blue text-white transition-all duration-300 ">
                 <MapPin size={22} />
               </div>
@@ -303,12 +282,11 @@ export default function Contact() {
                 Corporate Office
               </h3>
 
-               <p className="mx-auto max-w-[330px] text-sm leading-6 text-gray-500 transition-colors duration-300 group-hover:text-white">
-    942, 9th Floor, Astralis Supernova, Sector 94, Noida, Uttar Pradesh 201301, India
-    
-  </p>
+              <p className="mx-auto max-w-[330px] text-sm leading-6 text-gray-500 transition-colors duration-300 group-hover:text-white">
+                942, 9th Floor, Astralis Supernova, Sector 94, Noida, Uttar
+                Pradesh 201301, India
+              </p>
             </div>
-
           </div>
         </section>
 
@@ -317,12 +295,10 @@ export default function Contact() {
         ========================================================== */}
         <section className="px-5 py-12 sm:px-8 sm:py-16 md:py-20 lg:px-0">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-14">
-
             {/* =====================================================
                 FORM
             ====================================================== */}
             <div className="min-w-0">
-
               {/* HEADING */}
               <div className="mb-7 sm:mb-8">
                 <h2 className="text-2xl font-bold text-brand-blue sm:text-3xl">
@@ -333,20 +309,12 @@ export default function Contact() {
               </div>
 
               {/* FORM */}
-              <form
-                className="space-y-4 sm:space-y-5"
-                onSubmit={onSubmit}
-              >
-
+              <form className="space-y-4 sm:space-y-5" onSubmit={onSubmit}>
                 {/* NAME + COMPANY */}
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
-
                   {/* NAME */}
                   <div>
-                    <label
-                      htmlFor="name"
-                      className="sr-only"
-                    >
+                    <label htmlFor="name" className="sr-only">
                       Your Name
                     </label>
 
@@ -363,10 +331,7 @@ export default function Contact() {
 
                   {/* COMPANY */}
                   <div>
-                    <label
-                      htmlFor="company"
-                      className="sr-only"
-                    >
+                    <label htmlFor="company" className="sr-only">
                       Company Name
                     </label>
 
@@ -384,13 +349,9 @@ export default function Contact() {
 
                 {/* EMAIL + PHONE */}
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
-
                   {/* EMAIL */}
                   <div>
-                    <label
-                      htmlFor="email"
-                      className="sr-only"
-                    >
+                    <label htmlFor="email" className="sr-only">
                       Email Address
                     </label>
 
@@ -407,10 +368,7 @@ export default function Contact() {
 
                   {/* PHONE */}
                   <div>
-                    <label
-                      htmlFor="phone"
-                      className="sr-only"
-                    >
+                    <label htmlFor="phone" className="sr-only">
                       Phone Number
                     </label>
 
@@ -428,10 +386,7 @@ export default function Contact() {
 
                 {/* SERVICE */}
                 <div>
-                  <label
-                    htmlFor="service"
-                    className="sr-only"
-                  >
+                  <label htmlFor="service" className="sr-only">
                     Service Required
                   </label>
 
@@ -446,13 +401,9 @@ export default function Contact() {
                       Service Required *
                     </option>
 
-                    <option value="Air Freight">
-                      Air Freight
-                    </option>
+                    <option value="Air Freight">Air Freight</option>
 
-                    <option value="Ocean Freight">
-                      Ocean Freight
-                    </option>
+                    <option value="Ocean Freight">Ocean Freight</option>
 
                     <option value="Customs Clearance Services">
                       Customs Clearance Services
@@ -474,18 +425,13 @@ export default function Contact() {
                       Consultancy Services
                     </option>
 
-                    <option value="Other">
-                      Other
-                    </option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
                 {/* MESSAGE */}
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="sr-only"
-                  >
+                  <label htmlFor="message" className="sr-only">
                     Your Message
                   </label>
 
@@ -505,9 +451,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-brand-orange px-6 text-sm font-semibold uppercase text-white transition-all duration-300 hover:gap-3 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
                 >
-                  {isSubmitting
-                    ? "Sending..."
-                    : "Send Message"}
+                  {isSubmitting ? "Sending..." : "Send Message"}
 
                   {!isSubmitting && (
                     <ArrowRight
@@ -527,7 +471,6 @@ export default function Contact() {
                 LOCATION
             ====================================================== */}
             <div className="min-w-0">
-
               {/* HEADING */}
               <div className="mb-7 sm:mb-8">
                 <h2 className="text-2xl font-bold text-brand-blue sm:text-3xl">
@@ -540,7 +483,7 @@ export default function Contact() {
               {/* MAP */}
               <div className="h-[280px] w-full overflow-hidden rounded-xl border border-gray-100 shadow-sm sm:h-[330px] md:h-[360px]">
                 <iframe
-                  title="PLOVIT Logistics Location"
+                  title="Plovit Logistics Location"
                   src="https://www.google.com/maps?q=PLOVIT%20Logistics%20Noida&output=embed"
                   className="h-full w-full border-0"
                   loading="lazy"
@@ -550,7 +493,6 @@ export default function Contact() {
 
               {/* OFFICE HOURS */}
               <div className="mt-5 flex items-start gap-4 rounded-xl bg-gray-50 p-5 sm:p-6">
-
                 {/* ICON */}
                 <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-brand-blue text-white sm:h-12 sm:w-12">
                   <Clock size={22} />
@@ -574,7 +516,6 @@ export default function Contact() {
             </div>
           </div>
         </section>
-
       </div>
     </main>
   );
